@@ -1,18 +1,16 @@
 """Main app/routig file for Twitoff"""
 
 from flask import Flask, render_template, request
-from dotenv import load_dotenv
 from os import getenv
 from .models import DB, User
 from .twitter import add_or_update_user, update_all_users
 from .predict import predict_user
 
-
 def create_app():
     """ Creates and Configures a Flask application"""
 
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     DB.init_app(app)
 

@@ -6,11 +6,6 @@ from .models import DB, User
 from .twitter import add_or_update_user, update_all_users
 from .predict import predict_user
 
-import dash
-import dash_bootstrap_components as dbc
-import dash_core_components as dcc
-import dash_html_components as html
-
 def create_app():
     """ Creates and Configures a Flask application"""
 

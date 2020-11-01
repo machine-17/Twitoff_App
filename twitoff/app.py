@@ -1,18 +1,21 @@
 """Main app/routig file for Twitoff"""
 
 from flask import Flask, render_template, request
-from dotenv import load_dotenv
 from os import getenv
 from .models import DB, User
 from .twitter import add_or_update_user, update_all_users
 from .predict import predict_user
 
+import dash
+import dash_bootstrap_components as dbc
+import dash_core_components as dcc
+import dash_html_components as html
 
 def create_app():
     """ Creates and Configures a Flask application"""
 
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     DB.init_app(app)
 
@@ -82,3 +85,22 @@ def create_app():
         return render_template('base.html', title='Reset Database!')
 
     return app
+
+footer = dbc.Container(
+    dbc.Row(
+        dbc.Col(
+            html.P(
+                [
+                    html.Span('Lester Gomez', className='mr-2'), 
+                    html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:Lester17.C@Gmail.com'),
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/machine-17/Twitoff_App'),
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/lg17/'),
+                    html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/_machine17'),
+                ], 
+                className='lead'
+            )
+        )
+    )
+)
+
+html.Div([footer])

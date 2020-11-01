@@ -16,7 +16,6 @@ django = "*"
 scikit-learn = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
-pipfile = "*"
 
 [requires]
 python_version = "3.8"

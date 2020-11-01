@@ -6,6 +6,7 @@ from .models import DB, User
 from .twitter import add_or_update_user, update_all_users
 from .predict import predict_user
 
+
 def create_app():
     """ Creates and Configures a Flask application"""
 

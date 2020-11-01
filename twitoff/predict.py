@@ -9,10 +9,8 @@ from .twitter import vectorize_tweet
 def predict_user(user0_name, user1_name, hypo_tweet_text):
     """
     Determine and return which user is more likely to say a given tweet
-
     Example run: predict_user('jackblack', 'hillaryclinton',
     'I like politics and democrats')
-
     Return 0 (user0_name) or 1 (user1_name)
     """
 

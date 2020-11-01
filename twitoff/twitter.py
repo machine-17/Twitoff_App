@@ -44,7 +44,7 @@ def add_or_update_user(username):
         for tweet in tweets:
             vectorized_tweet = vectorize_tweet(tweet.full_text)
             db_tweet = Tweet(
-                id=tweet.id, text=tweet.full_text,
+                id=tweet.id, text=tweet.full_text[:300],
                 vect=vectorized_tweet
                 )
             db_user.tweets.append(db_tweet)

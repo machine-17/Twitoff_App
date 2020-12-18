@@ -1,6 +1,6 @@
 # Tweets Prediction App
 
-<img src="https://raw.githubusercontent.com/machine-17/Twitoff-App/main/other/twitter%20image.jpg" width="1000" height="500">
+<img src="https://raw.githubusercontent.com/machine-17/Twitoff_App/main/other/twitter%20image.jpg" width="1000" height="500">
 
 **Summary:**
 
